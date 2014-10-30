@@ -11,6 +11,12 @@ php:
 env:
   - CI_REPORTS=shippable/testresults COVERAGE_REPORTS=shippable/codecoverage
 
+before_install:
+  - hhvm --version
+  - source ~/.phpenv/versions/$SHIPPABLE_PHP_RUNTIME
+  - source ~/usr/local/bin/phpenv-install $SHIPPABLE_PHP_RUNTIME
+  - php --version
+
 script:
    - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage tests/calculator_test.php
 
