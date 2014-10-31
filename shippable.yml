@@ -10,10 +10,10 @@ env:
   - mkdir -p shippable/testresults
 
 before_install:
-  - php --version
+  - phpenv install $SHIPPABLE_PHP_RUNTIME
 
 install:
-  - phpenv install $SHIPPABLE_PHP_RUNTIME
+  - php --version
 
 script:
   - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage tests/calculator_test.php
