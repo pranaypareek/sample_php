@@ -3,14 +3,14 @@ language: php
 build_image: shippableimages/ubuntu1204_php:0.0.1
 
 php: 
-  - 5.3.10
+  - 5.3
   
 env:
   - mkdir -p shippable/codecoverage
   - mkdir -p shippable/testresults
 
 before_install:
-  - phpenv install $SHIPPABLE_PHP_RUNTIME
+  - phpenv install $SHIPPABLE_PHP_VERSION
 
 install:
   - php --version
