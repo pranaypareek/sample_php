@@ -10,7 +10,7 @@ env:
   - mkdir -p shippable/testresults
 
 before_install:
-  - source ~/.phpenv/versions/$SHIPPABLE_PHP_RUNTIME
+  - -d source ~/.phpenv/versions/$SHIPPABLE_PHP_RUNTIME
   - /usr/local/bin/phpenv-install $SHIPPABLE_PHP_RUNTIME
   
 install:
