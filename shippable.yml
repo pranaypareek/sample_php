@@ -12,8 +12,7 @@ env:
   - CI_REPORTS=shippable/testresults COVERAGE_REPORTS=shippable/codecoverage
 
 before_install:
-  - source ~/.phpenv/versions/$SHIPPABLE_PHP_RUNTIME
-  - source ~/usr/local/bin/phpenv-install $SHIPPABLE_PHP_RUNTIME
+  - /usr/local/bin/phpenv-install $SHIPPABLE_PHP_RUNTIME
   - php --version
 
 script:
