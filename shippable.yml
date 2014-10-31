@@ -16,7 +16,7 @@ before_install:
   - /usr/local/bin/phpenv-install $SHIPPABLE_PHP_RUNTIME
 
 install:
-- php --version
+  - php --version
 
 script:
    - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage tests/calculator_test.php
