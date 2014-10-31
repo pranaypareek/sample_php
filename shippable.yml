@@ -10,7 +10,7 @@ env:
   - mkdir -p shippable/testresults
 
 before_install:
-  - phpenv install $SHIPPABLE_PHP_RUNTIME
+  - phpenv install $SHIPPABLE_PHP_VERSION
 
 install:
   - php --version
