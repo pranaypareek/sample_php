@@ -9,10 +9,8 @@ env:
   - mkdir -p shippable/codecoverage
   - mkdir -p shippable/testresults
 
-before_install:
-  - phpenv install $SHIPPABLE_PHP_VERSION
-
 install:
+  - phpenv install $SHIPPABLE_PHP_RUNTIME
   - php --version
 
 script:
