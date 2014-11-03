@@ -2,16 +2,16 @@ language: php
 
 build_image: shippableimages/ubuntu1204_php:0.0.1
 
-php: 
-  - 5.3.10
+php:
+  - 5.3
   
 env:
   - mkdir -p shippable/codecoverage
   - mkdir -p shippable/testresults
 
 before_install:
-  - source -d ~/.phpenv/versions/$SHIPPABLE_PHP_RUNTIME
-  - /usr/local/bin/phpenv-install $SHIPPABLE_PHP_RUNTIME
+  - export PATH=$HOME/.phpenv/bin:$HOME/.phpenv/extensions:$PATH && eval "$(phpenv init -)"
+  - phpenv global $SHIPPABLE_PHP_RUNTIME
   
 install:
   - php --version
